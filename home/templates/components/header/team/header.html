@@ -3,29 +3,15 @@
 
 <!-- Start Navbar Area -->
 <div class="navbar-area">
-    <div class="evolta-responsive-nav">
-        <div class="container">
-            <div class="evolta-responsive-menu">
-                <div class="logo">
-                    <a href="{% url 'index' %}">
-                        <img src="{% static 'assets/img/white-logo.png' %}" alt="logo">
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-
+    {% block sub_logo %}{% include 'components/header/sub_logo.html' %}{% endblock %}
     <div class="evolta-nav">
         <div class="container-fluid">
             <nav class="navbar navbar-expand-md navbar-light">
-                <a class="navbar-brand" href="{% url 'index' %}">
-                    <img src="{% static 'assets/img/white-logo.png' %}" alt="logo">
-                </a>
+                {% block logo %}{% include 'components/header/logo.html' %}{% endblock %}
 
                 <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                     <ul class="navbar-nav">
-                        <li class="nav-item"><a href="{% url 'index' %}" class="nav-link">Asosiy <i
-                        ></i></a>
+                        <li class="nav-item"><a href="{% url 'index' %}" class="nav-link">Asosiy <i></i></a>
                         </li>
                         <li class="nav-item"><a href="{% url 'team' %}" class="nav-link active">Jamoa</a></li>
 

@@ -99,3 +99,16 @@ class Aloqa(models.Model):
     class Meta:
         verbose_name = 'Aloqa Formasi'
         verbose_name_plural = 'Aloqa Formasi'
+
+
+class HomeTitle(models.Model):
+    title1 = models.TextField(max_length=100)
+    title2 = models.TextField(max_length=100)
+    description = models.TextField(max_length=400)
+
+    def __str__(self):
+        return self.title1
+
+    class Meta:
+        verbose_name = 'Home Title'
+        verbose_name_plural = 'Home Title'

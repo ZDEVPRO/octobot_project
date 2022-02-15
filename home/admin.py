@@ -1,5 +1,5 @@
 from django.contrib import admin
-from home.models import Team, Portfolio, Blog, Total, Aloqa
+from home.models import Team, Portfolio, Blog, Total, Aloqa, HomeTitle
 
 
 class TeamAdmin(admin.ModelAdmin):
@@ -18,6 +18,10 @@ class BlogAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('title',)}
 
 
+class HomeTitleAdmin(admin.ModelAdmin):
+    list_display = ['title1', 'title2', 'description']
+
+
 class TotalAdmin(admin.ModelAdmin):
     list_display = ['n1', 'n2', 'n3', 'n4']
 
@@ -27,6 +31,7 @@ class AloqaAdmin(admin.ModelAdmin):
     readonly_fields = ['name', 'subject', 'phone', 'create_time', 'create_date', 'ip']
 
 
+admin.site.register(HomeTitle, HomeTitleAdmin)
 admin.site.register(Aloqa, AloqaAdmin)
 admin.site.register(Total, TotalAdmin)
 admin.site.register(Team, TeamAdmin)

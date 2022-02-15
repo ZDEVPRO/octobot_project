@@ -942,7 +942,7 @@ Main Banner Area CSS
 .main-banner {
   position: relative;
   z-index: 1;
-  background-color: #0ca59d;
+  background-color: black;
   height: 700px;
   padding-left: 50px;
   padding-right: 50px;

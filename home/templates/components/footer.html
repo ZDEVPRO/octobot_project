@@ -1,16 +1,18 @@
 {% load static %}
 
+
 <!-- Start Footer Area -->
 <footer class="footer-area">
     <div class="container">
         <div class="row">
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="single-footer-widget">
-                    <div class="logo">
-                        <a href="#"><img src="{% static 'assets/img/white-logo.png' %}" alt="image"></a>
-                        <p>Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan.</p>
-                    </div>
-
+                    {% for rs in meta_footer_latest %}
+                        <div class="logo">
+                            <a style="width: 300px; height: auto;" href="{% url 'index' %}"><img class="vz2" src="{{ rs.image.url }}" alt="image"></a>
+                            <p>{{ rs.description }}</p>
+                        </div>
+                    {% endfor %}
                     <ul class="social">
                         <li><a href="#" target="_blank"><i class="flaticon-facebook-letter-logo"></i></a></li>
                         <li><a href="#" target="_blank"><i class="flaticon-twitter-black-shape"></i></a></li>
@@ -22,44 +24,37 @@
 
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="single-footer-widget">
-                    <h3>Services</h3>
-
+                    <h3>Xizmatlar</h3>
                     <ul class="footer-services-list">
-                        <li><a href="#">Product Engineering</a></li>
-                        <li><a href="#">UX/UI Design</a></li>
-                        <li><a href="#">Big Data Analysis</a></li>
-                        <li><a href="#">Desktop Applications</a></li>
-                        <li><a href="#">Mobile Applications</a></li>
+                        {% for rs in footer_services_latest %}
+                        <li><a href="/{{ rs.slug }}">{{ rs.title }}</a></li>
+                        {% endfor %}
                     </ul>
                 </div>
             </div>
 
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="single-footer-widget">
-                    <h3>Quick Links</h3>
-
+                    <h3>Menyular</h3>
                     <ul class="quick-links-list">
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Contact</a></li>
-                        <li><a href="#">Support</a></li>
-                        <li><a href="#">Applications</a></li>
+                        {% for rs in footer_menus_latest %}
+                        <li><a href="{{ rs.slug }}">{{ rs.title }}</a></li>
+                        {% endfor %}
                     </ul>
                 </div>
             </div>
 
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="single-footer-widget">
-                    <h3>Contacts</h3>
-
+                    <h3>Aloqa malumotlari</h3>
+                    {% for rs in footer_contacts_latest %}
                     <ul class="footer-contact-list">
-                        <li><span>Address:</span> 2750 Quadra Street Victoria, Canada</li>
-                        <li><span>Email:</span> <a href="#"><span class="__cf_email__"
-                                                                  data-cfemail="3e5b4851524a5f7e59535f5752105d5153">[email&#160;protected]</span></a>
+                        <li><span>Manzil:</span>{{ rs.address }}</li>
+                        <li><span>Email:</span>{{ rs.email }}</li>
                         </li>
-                        <li><span>Phone:</span> <a href="#">+44 587 154756</a></li>
-                        <li><span>Fax:</span> <a href="#">+44 785 4578964</a></li>
+                        <li><span>Telefon:</span> <a href="#">{{ rs.phone }}</a></li>
                     </ul>
+                    {% endfor %}
                 </div>
             </div>
         </div>

@@ -19,6 +19,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'home.apps.HomeConfig',
+    'footer.apps.FooterConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -49,6 +50,11 @@ TEMPLATES = [
                 'home.context.teamview',
                 'home.context.portfolioview',
                 'home.context.total',
+                'home.context.hometitle',
+                'home.context.footerlogoview',
+                'home.context.footermenusview',
+                'home.context.footercontactsview',
+                'home.context.footerservicesview',
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',

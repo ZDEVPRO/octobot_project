@@ -1,0 +1,21 @@
+{% load static %}
+
+<style>
+    .vz1 {
+        width: 15%;
+        margin-left: 20px;
+        margin-top: 10px;
+    }
+
+    .vz2 {
+        width: 100%;
+        height: auto;
+    }
+    .vz2 {
+        width: 200px;
+    }
+</style>
+
+<a class="navbar-brand vz1" href="{% url 'index' %}">
+    <img class="vz2" src="{% static 'assets/img/logo/logo.png' %}" alt="logo">
+</a>
